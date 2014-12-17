@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery - Load and Get HTML</title>
+		<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+		<script>
+			$(document).ready(function() { 
+				//$("#loadResults").load("HTMLSnippet.html");
+				$("#loadResults").load("HTMLSnippet.html", function() {
+					console.log(".load Complete!");
+				});
+
+				$.get("HTMLSnippet.html", function(data) {
+					$("#getResults").append(data);
+					console.log(".get Complete!");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>jQuery - Load and Get HTML</h1>
+
+		<div id="loadResults"></div>
+		<div id="getResults"></div>
+	</body>
+</html>
